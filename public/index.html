@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="CardsAgainstAssembly">
+<head>
+ <title>Cards Against Assembly</title>
+ <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+<link rel="stylesheet" href="stylesheets/style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/cardsAgainstAssemblyController.js"></script>
+<script src="scripts/directives/cardsAgainstAssemblyDirective.js"></script>
+</head>
+<body>
+      <div class="container">
+        <header class="navbar">
+          <h1 class="pull-left">Cards Against Assembly</h1>
+
+          <scores></scores>
+        </header>
+
+        <section id="cards" class="container-fluid" ng-controller="CardsController as cardsCtrl">
+          <div class="row">
+
+            <!-- index.html -->
+        <div ng-repeat="card in cardsCtrl.questionsList">
+        <wdi-card question={{card.question}}></wdi-card></div>
+
+      <form ng-submit="cards.createCard()">
+      <div>
+        <label for="newCard-question">Question:</label>
+        <input type="text" id="newCard-question" ng-model="cards.newCard.question" placeholder="I'm sorry I couldn't finish my homework...">
+      </div>
+      <div>
+        <label for="newCard-answer">Answer:</label>
+        <input type="text" id="newCard-answer" ng-model="cards.newCard.answer" placeholder="the dog ate my laptop!">
+        </input>
+      </div>
+      <div>
+        <input type="submit" value="Add Card">
+        <input type="edit" value="Edit Card">
+        <input type="delete" value="Delete Card">
+      </div>
+    </form>
+          </div>
+        </section>
+        <hr/>
+        <wdi-card question="Why is Angular so awesome?"></wdi-card>
+      <footer>
+        <p>Made with <span class="heart">♥︎</span> at General Assembly</p>
+      </footer>
+      </div>
+</body>
+</html>
