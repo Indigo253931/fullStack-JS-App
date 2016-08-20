@@ -1,5 +1,11 @@
 angular.module('CardsAgainstAssembly')
-  .controller('CardsController', CardsController);
+  .controller('CardsController', CardsController)
+  .config(function($routeProvider, $locationProvider){
+    $routeProvider
+    .when('/', {
+      templateUrl: index.html
+    });
+  });
 
 CardsController.$inject=['$http'];
 
@@ -8,7 +14,7 @@ function CardsController($http){
  this.all = [];
 
  function get(){
-$http.get('https://shielded-forest-41789.herokuapp.com/api/flashcards')
+  $http.get('https://shielded-forest-41789.herokuapp.com/api/flashcards')
   .then(function(response){  
       self.all = response.data;
   });

@@ -2,9 +2,15 @@
 <html ng-app="CardsAgainstAssembly">
 <head>
  <title>Cards Against Assembly</title>
+
+ <!-- STYLESHEETS -->
  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 <link rel="stylesheet" href="stylesheets/style.css">
+
+<!-- VENDOR SCRIPTS -->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+
+<!-- APPLICATION SCRIPTS -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/cardsAgainstAssemblyController.js"></script>
 <script src="scripts/directives/cardsAgainstAssemblyDirective.js"></script>
@@ -17,7 +23,7 @@
           <scores></scores>
         </header>
 
-        <section id="cards" class="container-fluid" ng-controller="CardsController as cardsCtrl">
+        <section id="cards" class="container-fluid" ng-controller="CardsController as cards">
           <div class="row">
 
             <!-- index.html -->
